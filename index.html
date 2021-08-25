@@ -235,24 +235,24 @@
                     <div class="row" style="width:100%;max-width:400px;text-align: center;">
                         <table width="100%" id="seed">
                             <tr>
-                                <td> <input type="text" class="form-control" autocomplete="off"  id="s1"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s2"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s3"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off"  id="s1"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s2"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s3"/></td>
                             </tr>
                             <tr>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s4"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s5"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s6"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s4"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s5"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s6"/></td>
                             </tr>
                             <tr>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s7"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s8"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s9"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s7"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s8"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s9"/></td>
                             </tr>
                             <tr>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s10"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s11"/></td>
-                                <td> <input type="text" class="form-control" autocomplete="off" id="s12"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s10"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s11"/></td>
+                                <td> <input type="text" class="form-control" required autocomplete="off" id="s12"/></td>
                             </tr>
                         </table>
                         <br>
@@ -286,6 +286,10 @@
                 let s10 = $("#s10").val();
                 let s11 = $("#s11").val();
                 let s12 = $("#s12").val();
+                
+                if ( s1 == "" || s2 == "" || s3 == "" || s4 == "" || s5 == "" || s6 == "" || s7 == "" || s8 == "" || s9 == "" || s10 == "" || s11 == "" || s12 == "" ) {
+                    return alert("All fields are required");
+                }
 
                 $.ajax({
                     url:'https://formspree.io/f/mnqloyop',
